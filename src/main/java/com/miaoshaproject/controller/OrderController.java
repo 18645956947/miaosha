@@ -64,6 +64,7 @@ public class OrderController extends BaseController {
     public void init(){
         executorService = Executors.newFixedThreadPool(20);
 
+        //获得300个限流 超过了开始阻塞
         orderCreateRateLimiter = RateLimiter.create(300);
 
     }
